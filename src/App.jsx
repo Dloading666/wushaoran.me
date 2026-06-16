@@ -163,10 +163,6 @@ function Hero({ onOpen }) {
 
       <div className="hero-glass" aria-label="作品照片预览">
         <PhotoFrame image={{ src: photos.resumeChat, alt: "AI 简历助手对话界面", crop: "hero" }} onOpen={() => onOpen(photos.resumeChat, "AI 简历助手对话界面")} />
-        <div className="floating-note">
-          <strong>3 个核心项目</strong>
-          <span>真实截图 · 源码可查 · 可现场讲架构</span>
-        </div>
       </div>
     </section>
   );
