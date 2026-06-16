@@ -1,0 +1,15 @@
+node_modules/
+dist/
+.npm-cache/
+.npmrc
+.DS_Store
+
+# Local QA captures
+qa-*.png
+design-qa.md
+AGENTS.md
+
+# Editor and environment files
+.env
+.env.*
+!.env.example
