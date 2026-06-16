@@ -34,6 +34,14 @@ http://127.0.0.1:5173/
 npm run build
 ```
 
+## Docker
+
+```bash
+docker compose up -d --build
+```
+
+The container serves the site on port `80`.
+
 ## Domain
 
 Custom domain:
@@ -41,4 +49,3 @@ Custom domain:
 ```text
 wushaoran.me
 ```
-

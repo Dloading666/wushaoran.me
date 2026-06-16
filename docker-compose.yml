@@ -1,0 +1,8 @@
+services:
+  portfolio:
+    build: .
+    container_name: wushaoran-me
+    restart: unless-stopped
+    ports:
+      - "80:80"
+
