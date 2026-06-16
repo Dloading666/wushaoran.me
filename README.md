@@ -40,7 +40,7 @@ npm run build
 docker compose up -d --build
 ```
 
-The container serves the site on port `80`.
+The container serves the site on `127.0.0.1:8090` and is intended to sit behind an Nginx reverse proxy for `wushaoran.me`.
 
 ## Domain
 
