@@ -162,7 +162,20 @@ function Hero({ onOpen }) {
       </div>
 
       <div className="hero-glass" aria-label="作品照片预览">
+        <div className="stage-topline">
+          <span>(CAREERFORGE_AI)</span>
+          <span>001 / 003</span>
+        </div>
+        <div className="stage-links" aria-label="首屏项目标签">
+          <span>agent loop ↗</span>
+          <span>function calling ↗</span>
+          <span>pdf export ↗</span>
+        </div>
         <PhotoFrame image={{ src: photos.resumeChat, alt: "AI 简历助手对话界面", crop: "hero" }} onOpen={() => onOpen(photos.resumeChat, "AI 简历助手对话界面")} />
+        <div className="stage-footer">
+          <span>WHERE AGENT WORKFLOWS BECOME PRODUCTS</span>
+          <span>FastAPI · SSE · Resume Editor</span>
+        </div>
       </div>
     </section>
   );

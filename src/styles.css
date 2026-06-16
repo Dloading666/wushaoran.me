@@ -28,8 +28,8 @@ body {
   min-width: 320px;
   min-height: 100vh;
   background:
-    radial-gradient(circle at 16% -8%, rgba(122, 155, 238, 0.24), transparent 32%),
-    radial-gradient(circle at 84% 4%, rgba(224, 239, 255, 0.16), transparent 28%),
+    radial-gradient(circle at 16% -8%, rgba(122, 155, 238, 0.28), transparent 32%),
+    radial-gradient(circle at 84% 4%, rgba(224, 239, 255, 0.22), transparent 28%),
     radial-gradient(circle at 52% 52%, rgba(64, 81, 124, 0.14), transparent 34%),
     #030407;
   color: #f7f8fb;
@@ -222,8 +222,8 @@ a:focus-visible {
 
 .hero {
   display: grid;
-  grid-template-columns: minmax(0, 0.95fr) minmax(440px, 1.05fr);
-  gap: clamp(42px, 7vw, 100px);
+  grid-template-columns: minmax(0, 0.78fr) minmax(520px, 1.22fr);
+  gap: clamp(34px, 5vw, 78px);
   align-items: center;
   min-height: 100vh;
   padding: 132px var(--page) 76px;
@@ -241,7 +241,7 @@ a:focus-visible {
 .hero h1 {
   max-width: 820px;
   margin: 22px 0 0;
-  font-size: clamp(48px, 6.2vw, 94px);
+  font-size: clamp(48px, 5.6vw, 86px);
   font-weight: 640;
   letter-spacing: -0.065em;
   line-height: 0.96;
@@ -283,14 +283,16 @@ a:focus-visible {
 .hero-glass {
   position: relative;
   overflow: hidden;
-  padding: clamp(14px, 2vw, 24px);
+  display: grid;
+  gap: 12px;
+  padding: clamp(16px, 2vw, 28px);
   border: 1px solid var(--glass-strong);
-  border-radius: clamp(30px, 4vw, 54px);
+  border-radius: clamp(34px, 4.4vw, 62px);
   background:
-    linear-gradient(128deg, rgba(255, 255, 255, 0.28), transparent 22%, rgba(255, 255, 255, 0.08) 58%, rgba(255, 255, 255, 0.18)),
+    linear-gradient(128deg, rgba(255, 255, 255, 0.34), transparent 20%, rgba(255, 255, 255, 0.12) 58%, rgba(255, 255, 255, 0.22)),
     radial-gradient(circle at 30% 12%, rgba(255, 255, 255, 0.18), transparent 34%),
-    radial-gradient(circle at 76% 86%, rgba(117, 148, 226, 0.16), transparent 34%),
-    rgba(14, 17, 24, 0.6);
+    radial-gradient(circle at 76% 86%, rgba(117, 148, 226, 0.2), transparent 34%),
+    rgba(210, 219, 233, 0.13);
   box-shadow:
     inset 0 1px rgba(255, 255, 255, 0.62),
     inset 28px 0 70px rgba(255, 255, 255, 0.08),
@@ -320,6 +322,67 @@ a:focus-visible {
   pointer-events: none;
   transform: rotate(10deg);
   content: "";
+}
+
+.stage-topline,
+.stage-footer {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: rgba(243, 247, 255, 0.78);
+  font-size: 12px;
+  font-weight: 680;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.stage-topline span:first-child {
+  color: #fff;
+  font-family: "SF Mono", "Roboto Mono", monospace;
+  font-size: clamp(17px, 1.7vw, 27px);
+  letter-spacing: 0.02em;
+}
+
+.stage-links {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: flex-end;
+  color: rgba(12, 15, 22, 0.72);
+  font-size: 12px;
+  font-weight: 650;
+  letter-spacing: 0.02em;
+  text-transform: lowercase;
+}
+
+.stage-links span {
+  padding: 7px 10px;
+  border: 1px solid rgba(8, 10, 14, 0.08);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.54);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+}
+
+.stage-footer {
+  gap: 14px;
+  align-items: end;
+}
+
+.stage-footer span:first-child {
+  max-width: 360px;
+  color: #fff;
+  font-size: clamp(18px, 2.25vw, 31px);
+  letter-spacing: -0.05em;
+  line-height: 0.95;
+}
+
+.stage-footer span:last-child {
+  color: rgba(229, 235, 247, 0.6);
+  white-space: nowrap;
 }
 
 .hero-glass::after {
@@ -374,7 +437,7 @@ a:focus-visible {
   padding: 0;
   border: 1px solid rgba(255, 255, 255, 0.34);
   border-radius: 30px;
-  background: rgba(244, 246, 250, 0.96);
+  background: rgba(244, 246, 250, 0.98);
   box-shadow:
     inset 0 1px rgba(255, 255, 255, 0.44),
     inset 0 -24px 48px rgba(255, 255, 255, 0.045),
@@ -432,7 +495,8 @@ a:focus-visible {
 }
 
 .photo-frame--hero {
-  aspect-ratio: 1.58;
+  aspect-ratio: 1.82;
+  border-radius: 28px;
 }
 
 .projects {
@@ -792,9 +856,32 @@ footer {
     border-radius: 28px;
   }
 
-  .floating-note {
-    position: static;
-    margin-top: 14px;
+  .stage-topline,
+  .stage-footer {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .stage-topline span:first-child {
+    font-size: 18px;
+  }
+
+  .stage-links {
+    justify-content: flex-start;
+  }
+
+  .stage-links span {
+    padding: 6px 9px;
+    font-size: 11px;
+  }
+
+  .stage-footer span:first-child {
+    font-size: 24px;
+  }
+
+  .stage-footer span:last-child {
+    white-space: normal;
   }
 
   .project-photos--2 {
